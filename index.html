@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institut des Portes de l'Eau – Louviers</title>
+  <meta name="description" content="Institut de beauté bio à Louviers. Soins visage Phyt's, épilations Épiloderm®, massages, minceur et manucure. Plus de 23 ans d'expérience." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* =====================
+       VARIABLES & RESET
+    ===================== */
+    :root {
+      --cream:     #F4EEE0;
+      --cream-dark:#EDE4CE;
+      --teal:      #2B6E63;
+      --teal-light:#3A8A7D;
+      --teal-dark: #1E5249;
+      --gold:      #C5973A;
+      --gold-light:#D4AC5C;
+      --charcoal:  #2C2C2C;
+      --warm-gray: #7A7062;
+      --white:     #FDFAF4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* =====================
+       TYPOGRAPHY
+    ===================== */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; line-height: 1.25; }
+    h4 { font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+    .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 300; font-style: italic; color: var(--warm-gray); }
+
+    /* =====================
+       UTILITY
+    ===================== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: .65rem;
+      font-family: 'Jost', sans-serif; font-weight: 500; font-size: .72rem;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+    }
+    .btn {
+      display: inline-block; padding: .9rem 2.6rem;
+      font-family: 'Jost', sans-serif; font-size: .8rem;
+      font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+      border-radius: 0; cursor: pointer; transition: all .3s;
+    }
+    .btn-primary {
+      background: var(--teal); color: var(--white);
+      border: 1.5px solid var(--teal);
+    }
+    .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+    .btn-outline {
+      background: transparent; color: var(--teal);
+      border: 1.5px solid var(--teal);
+    }
+    .btn-outline:hover { background: var(--teal); color: var(--white); }
+    .btn-gold {
+      background: var(--gold); color: var(--white);
+      border: 1.5px solid var(--gold);
+    }
+    .btn-gold:hover { background: #b07e28; border-color: #b07e28; }
+    .divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 0 auto 2.5rem;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--gold); opacity: .4;
+    }
+    .divider span { color: var(--gold); font-size: 1rem; }
+
+    /* =====================
+       LOGO SVG
+    ===================== */
+    .logo-svg { width: 56px; height: 56px; }
+    .logo-svg-sm { width: 40px; height: 40px; }
+
+    /* =====================
+       NAVIGATION
+    ===================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(244, 238, 224, .96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(197,151,58,.2);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.06); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 74px; max-width: 1160px; margin: 0 auto; padding: 0 2rem;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: .9rem;
+    }
+    .nav-brand-text { line-height: 1.2; }
+    .nav-brand-text .name {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem;
+      font-weight: 600; color: var(--teal-dark); letter-spacing: .02em;
+    }
+    .nav-brand-text .city {
+      font-family: 'Jost', sans-serif; font-size: .65rem;
+      font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2.4rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--charcoal);
+      transition: color .25s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--gold); transform: scaleX(0);
+      transition: transform .25s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-rdv {
+      font-size: .72rem; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; padding: .65rem 1.6rem;
+      background: var(--teal); color: var(--white); border: none;
+      cursor: pointer; transition: background .25s;
+    }
+    .nav-rdv:hover { background: var(--teal-dark); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--charcoal); transition: all .3s; }
+
+    /* =====================
+       HERO
+    ===================== */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #EDE4CE 0%, #F4EEE0 40%, #E8F0EE 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 74px;
+    }
+    .hero-deco {
+      position: absolute; top: 0; right: 0; width: 55%; height: 100%;
+      background: linear-gradient(145deg, rgba(43,110,99,.07) 0%, rgba(43,110,99,.14) 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-botanical {
+      position: absolute; right: 6%; top: 50%; transform: translateY(-50%);
+      width: 420px; opacity: .18; pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1160px; margin: 0 auto; padding: 5rem 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 1.8rem;
+    }
+    .hero-badge::before { content:'◈'; font-size: .9rem; }
+    .hero-badge::after  { content:'◈'; font-size: .9rem; }
+    .hero-title {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 600; color: var(--teal-dark);
+      line-height: 1.12; margin-bottom: 1.4rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 300;
+      color: var(--warm-gray); line-height: 1.75;
+      margin-bottom: 2.6rem; max-width: 480px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-top: 4rem; padding-top: 2.5rem;
+      border-top: 1px solid rgba(197,151,58,.25);
+    }
+    .stat-item .num {
+      font-family: 'Playfair Display', serif; font-size: 2.4rem;
+      font-weight: 600; color: var(--teal); line-height: 1;
+    }
+    .stat-item .lbl {
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--warm-gray); margin-top: .3rem;
+    }
+    .hero-visual {
+      display: flex; flex-direction: column; align-items: center; gap: 2rem;
+    }
+    .hero-logo-frame {
+      width: 280px; height: 280px;
+      border: 1px solid rgba(197,151,58,.35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      background: radial-gradient(circle, rgba(43,110,99,.07) 0%, transparent 70%);
+    }
+    .hero-logo-frame::before {
+      content: ''; position: absolute; inset: 12px;
+      border: 1px dashed rgba(197,151,58,.25);
+      border-radius: 50%;
+    }
+    .hero-logo-inner { text-align: center; }
+    .hero-logo-inner .logo-main { width: 110px; height: 110px; margin: 0 auto 1rem; }
+    .hero-logo-inner .brand-name {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      font-weight: 700; color: var(--teal-dark); text-align: center;
+      letter-spacing: .04em; line-height: 1.3;
+    }
+    .hero-logo-inner .brand-city {
+      font-size: .62rem; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-top: .25rem;
+    }
+    .hero-tags {
+      display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center;
+    }
+    .hero-tag {
+      font-size: .68rem; letter-spacing: .15em; text-transform: uppercase;
+      padding: .4rem .95rem; border: 1px solid rgba(43,110,99,.3);
+      color: var(--teal); background: rgba(43,110,99,.05);
+    }
+
+    /* =====================
+       STRIP
+    ===================== */
+    .strip {
+      background: var(--teal);
+      padding: 1.1rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex; align-items: center; gap: .7rem;
+      font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+    }
+    .strip-item svg { width: 16px; height: 16px; fill: var(--gold-light); flex-shrink: 0; }
+
+    /* =====================
+       ABOUT
+    ===================== */
+    #about { padding: 7rem 0; background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .about-image-wrap {
+      position: relative; aspect-ratio: 4/5; max-height: 560px;
+    }
+    .about-image-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(43,110,99,.12) 0%, rgba(197,151,58,.1) 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-botanical-inner { width: 85%; opacity: .35; }
+    .about-badge-overlay {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      width: 130px; height: 130px;
+      background: var(--gold); border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: 0 8px 30px rgba(197,151,58,.35);
+    }
+    .about-badge-overlay .num {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem;
+      font-weight: 700; color: var(--white); line-height: 1;
+    }
+    .about-badge-overlay .txt {
+      font-size: .62rem; letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(255,255,255,.85); text-align: center; margin-top: .2rem;
+      padding: 0 .5rem;
+    }
+    .about-content h2 { font-size: 2.4rem; color: var(--teal-dark); margin-bottom: 1.4rem; }
+    .about-content .subtitle { margin-bottom: 1.8rem; }
+    .about-content p { color: var(--warm-gray); margin-bottom: 1.2rem; font-size: .95rem; line-height: 1.8; }
+    .about-pillars {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.2rem; margin: 2.2rem 0;
+    }
+    .pillar {
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(197,151,58,.25);
+      background: rgba(244,238,224,.5);
+    }
+    .pillar .icon { color: var(--gold); font-size: 1.3rem; margin-bottom: .5rem; }
+    .pillar h4 { color: var(--teal-dark); font-size: .72rem; letter-spacing: .12em; margin-bottom: .4rem; }
+    .pillar p { font-size: .82rem; color: var(--warm-gray); margin: 0; line-height: 1.6; }
+
+    /* =====================
+       SERVICES
+    ===================== */
+    #services { padding: 7rem 0; background: var(--cream); }
+    .services-header { text-align: center; margin-bottom: 4rem; }
+    .services-header h2 { font-size: 2.6rem; color: var(--teal-dark); margin-bottom: .8rem; }
+    .cat-tabs {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      justify-content: center; margin-bottom: 3.5rem;
+    }
+    .cat-tab {
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      padding: .6rem 1.5rem; cursor: pointer;
+      border: 1.5px solid rgba(43,110,99,.25);
+      color: var(--teal); background: transparent;
+      transition: all .25s;
+    }
+    .cat-tab.active, .cat-tab:hover {
+      background: var(--teal); color: var(--white);
+      border-color: var(--teal);
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white); padding: 2rem;
+      border: 1px solid rgba(197,151,58,.15);
+      transition: all .3s; position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 0; background: var(--gold);
+      transition: height .3s;
+    }
+    .service-card:hover { box-shadow: 0 8px 40px rgba(43,110,99,.1); transform: translateY(-3px); }
+    .service-card:hover::before { height: 100%; }
+    .service-cat-tag {
+      font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: .8rem;
+    }
+    .service-name {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      color: var(--teal-dark); margin-bottom: .5rem; font-weight: 600;
+    }
+    .service-desc { font-size: .85rem; color: var(--warm-gray); line-height: 1.65; margin-bottom: 1.2rem; }
+    .service-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1rem; border-top: 1px solid rgba(197,151,58,.2);
+    }
+    .service-duration {
+      font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--warm-gray); display: flex; align-items: center; gap: .4rem;
+    }
+    .service-duration svg { width: 13px; height: 13px; fill: var(--gold); }
+    .service-price {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem;
+      font-weight: 600; color: var(--teal);
+    }
+
+    /* =====================
+       EXPERTISE BAND
+    ===================== */
+    #expertise {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+    }
+    .expertise-inner {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: rgba(255,255,255,.1);
+    }
+    .expertise-item {
+      padding: 3rem 2.5rem; background: transparent;
+      text-align: center; transition: background .3s;
+    }
+    .expertise-item:hover { background: rgba(255,255,255,.07); }
+    .expertise-icon {
+      width: 52px; height: 52px; margin: 0 auto 1.3rem;
+      border: 1px solid rgba(197,151,58,.5);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--gold-light); font-size: 1.3rem;
+    }
+    .expertise-item h3 {
+      font-size: 1.2rem; color: var(--white);
+      margin-bottom: .7rem;
+    }
+    .expertise-item p {
+      font-size: .85rem; color: rgba(255,255,255,.7);
+      line-height: 1.7;
+    }
+
+    /* =====================
+       ENGAGEMENTS
+    ===================== */
+    #engagements { padding: 7rem 0; background: var(--white); }
+    .engagements-header { text-align: center; margin-bottom: 4rem; }
+    .engagements-header h2 { font-size: 2.4rem; color: var(--teal-dark); }
+    .engagements-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    }
+    .engagement-item { text-align: center; padding: 2rem 1.5rem; }
+    .eng-icon {
+      width: 70px; height: 70px; margin: 0 auto 1.5rem;
+      border: 1px solid rgba(197,151,58,.35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; color: var(--teal);
+      transition: all .3s;
+    }
+    .engagement-item:hover .eng-icon {
+      background: var(--teal); color: var(--white);
+      border-color: var(--teal);
+      box-shadow: 0 8px 30px rgba(43,110,99,.25);
+    }
+    .engagement-item h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      color: var(--teal-dark); margin-bottom: .6rem;
+    }
+    .engagement-item p { font-size: .85rem; color: var(--warm-gray); line-height: 1.7; }
+
+    /* =====================
+       BOOKING CTA
+    ===================== */
+    #booking {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #EDE4CE 0%, #F4EEE0 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #booking::before {
+      content: '◈'; position: absolute; top: 2rem; left: 50%; transform: translateX(-50%);
+      font-size: 1.5rem; color: rgba(197,151,58,.3);
+    }
+    .booking-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+    #booking h2 { font-size: 2.5rem; color: var(--teal-dark); margin-bottom: 1rem; }
+    #booking .subtitle { margin-bottom: 2.5rem; }
+    .booking-options {
+      display: flex; gap: 1.5rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2rem;
+    }
+    .booking-note {
+      font-size: .78rem; color: var(--warm-gray);
+      letter-spacing: .08em;
+    }
+    .booking-note a { color: var(--teal); text-decoration: underline; }
+
+    /* =====================
+       CONTACT
+    ===================== */
+    #contact { padding: 7rem 0; background: var(--cream-dark); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .contact-info h2 { font-size: 2.2rem; color: var(--teal-dark); margin-bottom: 1.5rem; }
+    .contact-info .subtitle { margin-bottom: 2rem; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 1.3rem; }
+    .contact-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .contact-list .ci {
+      width: 38px; height: 38px; flex-shrink: 0;
+      border: 1px solid rgba(197,151,58,.4);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: .95rem;
+    }
+    .contact-list .cl { font-size: .9rem; line-height: 1.6; color: var(--warm-gray); }
+    .contact-list .cl strong { color: var(--charcoal); display: block; margin-bottom: .15rem; font-weight: 500; }
+    .contact-map {
+      background: rgba(43,110,99,.08);
+      border: 1px solid rgba(197,151,58,.2);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .map-placeholder {
+      height: 260px; background: linear-gradient(135deg, rgba(43,110,99,.1) 0%, rgba(197,151,58,.1) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem; position: relative; overflow: hidden;
+    }
+    .map-placeholder-text { text-align: center; }
+    .map-placeholder-text p {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--teal-dark); margin-bottom: .5rem;
+    }
+    .map-placeholder-text span {
+      font-size: .8rem; color: var(--warm-gray); letter-spacing: .1em;
+    }
+    .hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .6rem; margin-top: 1.5rem;
+    }
+    .hour-row {
+      display: flex; justify-content: space-between;
+      font-size: .82rem; padding: .5rem .7rem;
+      background: rgba(255,255,255,.5);
+    }
+    .hour-row .day { color: var(--teal); font-weight: 500; letter-spacing: .05em; }
+    .hour-row .time { color: var(--warm-gray); }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      background: var(--teal-dark);
+      padding: 3.5rem 2rem 1.8rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand .name {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--white); font-weight: 600; margin-bottom: .3rem;
+    }
+    .footer-brand .city {
+      font-size: .65rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 1rem;
+    }
+    .footer-brand p {
+      font-size: .85rem; color: rgba(255,255,255,.55);
+      line-height: 1.7; max-width: 280px;
+    }
+    .footer-nav h4 {
+      color: var(--gold-light); font-size: .65rem; letter-spacing: .2em;
+      margin-bottom: 1.2rem;
+    }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .footer-nav ul a {
+      font-size: .82rem; color: rgba(255,255,255,.6); transition: color .25s;
+    }
+    .footer-nav ul a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      max-width: 1160px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .5rem;
+    }
+    .footer-bottom p { font-size: .75rem; color: rgba(255,255,255,.35); }
+    .social-links { display: flex; gap: 1rem; }
+    .social-links a {
+      width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.55); font-size: .85rem;
+      transition: all .25s;
+    }
+    .social-links a:hover {
+      border-color: var(--gold); color: var(--gold);
+    }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-image-wrap { display: none; }
+      .expertise-inner { grid-template-columns: 1fr; }
+      .engagements-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .engagements-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .about-pillars { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========== NAVIGATION =========== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <svg class="logo-svg-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="50" fill="none"/>
+        <!-- Arch -->
+        <path d="M20 72 L20 45 Q20 18 50 18 Q80 18 80 45 L80 72" stroke="#2B6E63" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M28 72 L28 47 Q28 26 50 26 Q72 26 72 47 L72 72" stroke="#2B6E63" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M36 72 L36 49 Q36 34 50 34 Q64 34 64 49 L64 72" stroke="#2B6E63" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Water drop -->
+        <path d="M50 30 C50 30 43 40 43 46 C43 49.87 46.13 53 50 53 C53.87 53 57 49.87 57 46 C57 40 50 30 50 30Z" fill="#C5973A"/>
+        <!-- Waves bottom -->
+        <path d="M15 80 Q22 75 29 80 Q36 85 43 80 Q50 75 57 80 Q64 85 71 80 Q78 75 85 80" stroke="#2B6E63" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M18 88 Q25 83 32 88 Q39 93 46 88 Q53 83 60 88 Q67 93 74 88 Q81 83 88 88" stroke="#2B6E63" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+      <div class="nav-brand-text">
+        <div class="name">Institut des Portes de l'Eau</div>
+        <div class="city">Louviers · Normandie</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">L'Institut</a></li>
+      <li><a href="#services">Soins</a></li>
+      <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.planity.com" target="_blank" class="btn nav-rdv">Prendre RDV</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- =========== HERO =========== -->
+<section id="hero">
+  <div class="hero-deco"></div>
+  <!-- Botanical SVG decoration -->
+  <svg class="hero-botanical" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M150 480 L150 100" stroke="#2B6E63" stroke-width="2"/>
+    <path d="M150 380 C150 380 80 340 60 280 C80 300 140 310 150 340" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.15)"/>
+    <path d="M150 340 C150 340 220 300 240 240 C220 260 160 270 150 300" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.15)"/>
+    <path d="M150 290 C150 290 70 250 55 185 C75 210 138 215 150 250" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.12)"/>
+    <path d="M150 250 C150 250 230 210 245 145 C225 170 162 175 150 210" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.12)"/>
+    <path d="M150 200 C150 200 90 165 85 110 C100 130 145 135 150 170" stroke="#2B6E63" stroke-width="1.2" fill="rgba(43,110,99,0.1)"/>
+    <path d="M150 170 C150 170 210 135 215 80 C200 100 155 105 150 140" stroke="#2B6E63" stroke-width="1.2" fill="rgba(43,110,99,0.1)"/>
+    <ellipse cx="60" cy="280" rx="12" ry="7" fill="#2B6E63" opacity="0.2" transform="rotate(-30 60 280)"/>
+    <ellipse cx="240" cy="240" rx="12" ry="7" fill="#2B6E63" opacity="0.2" transform="rotate(25 240 240)"/>
+    <ellipse cx="55" cy="185" rx="10" ry="6" fill="#2B6E63" opacity="0.18" transform="rotate(-25 55 185)"/>
+    <ellipse cx="245" cy="145" rx="10" ry="6" fill="#2B6E63" opacity="0.18" transform="rotate(20 245 145)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Institut Beauté Bio</div>
+      <h1 class="hero-title">
+        Un havre de paix<br>dédié à votre<br><em>beauté naturelle</em>
+      </h1>
+      <p class="hero-desc">
+        Soins d'exception certifiés biologiques, expertise de plus de 23 ans
+        et protocoles personnalisés au cœur de Louviers.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://www.planity.com" target="_blank" class="btn btn-primary">Réserver un soin</a>
+        <a href="#services" class="btn btn-outline">Découvrir les soins</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="num">23+</div>
+          <div class="lbl">Années d'expérience</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">100%</div>
+          <div class="lbl">Certifié biologique</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">7</div>
+          <div class="lbl">Univers de soins</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">68+</div>
+          <div class="lbl">Prestations</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-logo-frame">
+        <div class="hero-logo-inner">
+          <svg class="logo-main" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 115 L30 60 Q30 20 80 20 Q130 20 130 60 L130 115" stroke="#2B6E63" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M45 115 L45 63 Q45 35 80 35 Q115 35 115 63 L115 115" stroke="#2B6E63" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M60 115 L60 66 Q60 50 80 50 Q100 50 100 66 L100 115" stroke="#2B6E63" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M80 38 C80 38 66 60 66 70 C66 78 72.3 85 80 85 C87.7 85 94 78 94 70 C94 60 80 38 80 38Z" fill="#C5973A"/>
+            <path d="M15 125 Q27 118 39 125 Q51 132 63 125 Q75 118 87 125 Q99 132 111 125 Q123 118 135 125 Q147 132 155 125" stroke="#2B6E63" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M20 138 Q32 131 44 138 Q56 145 68 138 Q80 131 92 138 Q104 145 116 138 Q128 131 140 138" stroke="#2B6E63" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+          <div class="brand-name">INSTITUT DES<br>PORTES DE L'EAU</div>
+          <div class="brand-city">Louviers</div>
+        </div>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">Phyt's Bio</span>
+        <span class="hero-tag">Épiloderm®</span>
+        <span class="hero-tag">Coach Minceur</span>
+        <span class="hero-tag">Kobido</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== STRIP =========== -->
+<div class="strip">
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Place de la Porte de l'Eau, 27400 Louviers
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    09 82 52 92 16
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+    Prise de RDV sur Planity
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+    Lun – Sam : 9h30 – 19h00
+  </div>
+</div>
+
+<!-- =========== ABOUT =========== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <div class="about-image-bg">
+          <svg class="about-botanical-inner" viewBox="0 0 280 400" fill="none">
+            <path d="M140 390 L140 60" stroke="#2B6E63" stroke-width="3"/>
+            <path d="M140 300 C140 300 60 260 45 190 C70 220 132 225 140 265" stroke="#2B6E63" stroke-width="2" fill="rgba(43,110,99,0.15)"/>
+            <path d="M140 260 C140 260 220 220 235 150 C210 180 148 185 140 225" stroke="#2B6E63" stroke-width="2" fill="rgba(43,110,99,0.15)"/>
+            <path d="M140 210 C140 210 75 175 68 115 C88 138 136 142 140 178" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.12)"/>
+            <path d="M140 178 C140 178 205 143 212 83 C192 106 142 110 140 146" stroke="#2B6E63" stroke-width="1.5" fill="rgba(43,110,99,0.12)"/>
+            <ellipse cx="45" cy="190" rx="16" ry="9" fill="#2B6E63" opacity="0.25" transform="rotate(-35 45 190)"/>
+            <ellipse cx="235" cy="150" rx="16" ry="9" fill="#2B6E63" opacity="0.25" transform="rotate(30 235 150)"/>
+            <ellipse cx="68" cy="115" rx="14" ry="8" fill="#2B6E63" opacity="0.2" transform="rotate(-28 68 115)"/>
+            <ellipse cx="212" cy="83" rx="14" ry="8" fill="#2B6E63" opacity="0.2" transform="rotate(25 212 83)"/>
+            <!-- Gold drops -->
+            <path d="M140 70 C140 70 134 80 134 84 C134 87.3 136.7 90 140 90 C143.3 90 146 87.3 146 84 C146 80 140 70 140 70Z" fill="#C5973A" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="about-badge-overlay">
+          <div class="num">23</div>
+          <div class="txt">ans d'expertise</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">L'Institut</div>
+        <h2>Une expertise<br><em>d'exception</em></h2>
+        <p class="subtitle">Au cœur de Louviers, un espace pensé pour vous</p>
+        <p>Niché Place de la Porte de l'Eau à Louviers, l'Institut des Portes de l'Eau est bien plus qu'un espace beauté. C'est un lieu de reconnexion à soi, guidé par plus de 23 ans d'expérience et une philosophie profondément ancrée dans le naturel et le bio.</p>
+        <p>Esthéticienne diplômée et coach minceur certifiée, votre praticienne a fait le choix exigeant des produits 100 % certifiés biologiques Phyt's et de la cire bio-sourcée Épiloderm® pour toutes les prestations — parce que votre peau mérite le meilleur.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="icon">🌿</div>
+            <h4>100 % Bio certifié</h4>
+            <p>Gamme Phyt's, ampoules à usage unique ouvertes devant vous.</p>
+          </div>
+          <div class="pillar">
+            <div class="icon">✦</div>
+            <h4>23 ans d'expérience</h4>
+            <p>Un savoir-faire forgé sur plus de deux décennies de pratique.</p>
+          </div>
+          <div class="pillar">
+            <div class="icon">◈</div>
+            <h4>Protocoles sur-mesure</h4>
+            <p>Chaque soin est adapté à votre peau et à vos besoins du jour.</p>
+          </div>
+          <div class="pillar">
+            <div class="icon">🏆</div>
+            <h4>Coach minceur diplômée</h4>
+            <p>9 programmes Cursilhouette Bio personnalisés par morphotype.</p>
+          </div>
+        </div>
+        <a href="#booking" class="btn btn-primary">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICES =========== -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label" style="justify-content:center">Nos Soins</div>
+      <h2>La carte des soins</h2>
+      <p class="subtitle" style="text-align:center;margin-top:.6rem">Choisissez votre moment de bien-être</p>
+    </div>
+
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="filterCat(this,'all')">Tous les soins</button>
+      <button class="cat-tab" onclick="filterCat(this,'visage')">Soins Visage</button>
+      <button class="cat-tab" onclick="filterCat(this,'regard')">Beauté du Regard</button>
+      <button class="cat-tab" onclick="filterCat(this,'mains')">Mains &amp; Pieds</button>
+      <button class="cat-tab" onclick="filterCat(this,'epil')">Épilations</button>
+      <button class="cat-tab" onclick="filterCat(this,'corps')">Corps &amp; Minceur</button>
+      <button class="cat-tab" onclick="filterCat(this,'massage')">Massages</button>
+      <button class="cat-tab" onclick="filterCat(this,'bronzage')">Bronzage</button>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- SOINS VISAGE -->
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage</div>
+        <div class="service-name">Soin flash découverte</div>
+        <div class="service-desc">Un soin express pour découvrir nos soins visage Phyt's certifiés bio. Parfait pour une première expérience.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 30 min</span>
+          <span class="service-price">30 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage</div>
+        <div class="service-name">Soin botanique sur-mesure</div>
+        <div class="service-desc">Protocole Phyt's 100 % bio adapté à votre type de peau. Actifs botaniques purs, ampoules à usage unique ouvertes devant vous.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 45 min</span>
+          <span class="service-price">45 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage · Phyt's Bio</div>
+        <div class="service-name">Aqua Phyt's — Hydratation intense</div>
+        <div class="service-desc">Protocole intensif pour peaux déshydratées ou sèches. Hydratation profonde et éclat retrouvé. Certifié bio.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 75 min</span>
+          <span class="service-price">75 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage · Anti-Âge</div>
+        <div class="service-name">Soin anti-âge global — Panacée Sublime</div>
+        <div class="service-desc">Soin anti-âge global certifié bio. Réduit les rides, raffermit et unifie le teint. Résultat visible dès la première séance.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h30</span>
+          <span class="service-price">120 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage · Signature</div>
+        <div class="service-name">Rituel Suprême</div>
+        <div class="service-desc">Le summum des soins Signature. Protocole complet d'exception pour une transformation visible et durable.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h45</span>
+          <span class="service-price">185 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage · Kobido</div>
+        <div class="service-name">Soin liftant Kobido</div>
+        <div class="service-desc">Lifting japonais naturel d'inspiration Kobido. Techniques manuelles précises pour un effet liftant immédiat et naturel.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h</span>
+          <span class="service-price">85 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="visage">
+        <div class="service-cat-tag">Soins Visage · Photorajeunissement</div>
+        <div class="service-name">Photorajeunissement visage</div>
+        <div class="service-desc">Rajeunissement par lumière pulsée. Réduit taches, rougeurs et stimule la production de collagène. Résultat progressif et naturel.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 30 min</span>
+          <span class="service-price">60 €</span>
+        </div>
+      </div>
+
+      <!-- BEAUTÉ DU REGARD -->
+      <div class="service-card" data-cat="regard">
+        <div class="service-cat-tag">Beauté du Regard</div>
+        <div class="service-name">Rehaussement de cils avec teinture</div>
+        <div class="service-desc">Courbe et volume naturels avec teinture incluse. Regard sublimé, cils galbés et intenses. Résultat durable jusqu'à 8 semaines.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h</span>
+          <span class="service-price">65 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="regard">
+        <div class="service-cat-tag">Beauté du Regard</div>
+        <div class="service-name">Brow Lift avec teinture</div>
+        <div class="service-desc">Lissage et mise en forme des sourcils avec teinture. Une arcade parfaite, un regard ouvert et expressif.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 35 min</span>
+          <span class="service-price">40 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="regard">
+        <div class="service-cat-tag">Beauté du Regard · Forfait</div>
+        <div class="service-name">Forfait Regard Complet</div>
+        <div class="service-desc">Rehaussement de cils + Brow Lift avec teintures incluses. Le duo regard par excellence pour un résultat spectaculaire.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h20</span>
+          <span class="service-price">90 €</span>
+        </div>
+      </div>
+
+      <!-- MAINS & PIEDS -->
+      <div class="service-card" data-cat="mains">
+        <div class="service-cat-tag">Mains &amp; Pieds</div>
+        <div class="service-name">Manucure japonaise — Éclat &amp; Nutrition</div>
+        <div class="service-desc">Technique japonaise pour des ongles brillants et sains naturellement. Résultat éclatant sans vernis.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 45 min</span>
+          <span class="service-price">45 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="mains">
+        <div class="service-cat-tag">Mains &amp; Pieds</div>
+        <div class="service-name">Manucure soin Kératine — Reconstruction</div>
+        <div class="service-desc">Soin reconstituant à la kératine pour ongles abîmés. Renforce et nourrit en profondeur.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 40 min</span>
+          <span class="service-price">35 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="mains">
+        <div class="service-cat-tag">Mains &amp; Pieds</div>
+        <div class="service-name">Beauté des pieds + Soin anti-callosité</div>
+        <div class="service-desc">Soin complet pieds avec traitement anti-callosité inclus. Le duo parfait pour des pieds impeccables.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 45 min</span>
+          <span class="service-price">50 €</span>
+        </div>
+      </div>
+
+      <!-- ÉPILATIONS -->
+      <div class="service-card" data-cat="epil">
+        <div class="service-cat-tag">Épilations · Épiloderm®</div>
+        <div class="service-name">Épilation maillot intégral — Épiloderm®</div>
+        <div class="service-desc">Cire bio-sourcée à base de résine de pin végétale. Maillot intégral SIF compris. Repousse ralentie jusqu'à 6 semaines.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 25 min</span>
+          <span class="service-price">25 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="epil">
+        <div class="service-cat-tag">Épilations · Épiloderm®</div>
+        <div class="service-name">Épilation jambes entières — Épiloderm®</div>
+        <div class="service-desc">Jambes complètes à la cire bio Épiloderm®. Exfoliation naturelle incluse, idéal pour les peaux les plus sensibles.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 20 min</span>
+          <span class="service-price">39 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="epil">
+        <div class="service-cat-tag">Épilations · Forfait</div>
+        <div class="service-name">Forfait aisselles + maillot brésilien + jambes entières</div>
+        <div class="service-desc">Combinaison cire classique et Épiloderm®. La solution complète pour l'été.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 40 min</span>
+          <span class="service-price">45 €</span>
+        </div>
+      </div>
+
+      <!-- CORPS & MINCEUR -->
+      <div class="service-card" data-cat="corps">
+        <div class="service-cat-tag">Corps &amp; Minceur · Bilan offert</div>
+        <div class="service-name">Bilan corporel minceur — Offert</div>
+        <div class="service-desc">Bilan corporel gratuit avec votre coach minceur diplômée. Analyse de votre morphotype et définition de votre programme Cursilhouette Bio.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 30 min</span>
+          <span class="service-price" style="color:var(--gold)">Offert</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="corps">
+        <div class="service-cat-tag">Corps &amp; Minceur · Cursilhouette Bio</div>
+        <div class="service-name">Madérothérapie + Enveloppement</div>
+        <div class="service-desc">Madérothérapie combinée à un enveloppement adapté à votre morphotype. Résultat visible dès la première séance.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h15</span>
+          <span class="service-price">85 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="corps">
+        <div class="service-cat-tag">Corps &amp; Minceur · Drainage</div>
+        <div class="service-name">Drainage lympho-dynamique + Enveloppement</div>
+        <div class="service-desc">Massage de drainage lymphatique avec enveloppement. Idéal contre la rétention d'eau et les jambes lourdes.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h15</span>
+          <span class="service-price">80 €</span>
+        </div>
+      </div>
+
+      <!-- MASSAGES -->
+      <div class="service-card" data-cat="massage">
+        <div class="service-cat-tag">Massages · Bar à Huiles</div>
+        <div class="service-name">Sérénité absolue — Massage 60 min</div>
+        <div class="service-desc">Massage corps complet sur-mesure au bar à huiles. Huile choisie selon vos besoins. Relaxation profonde et évasion totale.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 1h</span>
+          <span class="service-price">55 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="massage">
+        <div class="service-cat-tag">Massages · Rituels 4 Éléments</div>
+        <div class="service-name">Rituel 4 Éléments — Expérience Ultime</div>
+        <div class="service-desc">Gommage + 50 min de massage + enveloppement dans l'ambiance de votre choix : Eau · Feu · Air · Terre.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 2h</span>
+          <span class="service-price">160 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="massage">
+        <div class="service-cat-tag">Massages · Rituels Visage &amp; Corps</div>
+        <div class="service-name">Rituel Évasion des Sens — 3h15</div>
+        <div class="service-desc">L'expérience sensorielle ultime. 3h15 de soins complets corps et visage. Une parenthèse hors du temps.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 3h15</span>
+          <span class="service-price">230 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="massage">
+        <div class="service-cat-tag">Massages · Escapade Gourmande</div>
+        <div class="service-name">Escapade Gourmande Bio au Chocolat</div>
+        <div class="service-desc">Rituel olfactif au chocolat bio. Gommage + 50 min de massage + enveloppement chocolaté. Pur plaisir des sens.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 2h</span>
+          <span class="service-price">160 €</span>
+        </div>
+      </div>
+
+      <!-- BRONZAGE -->
+      <div class="service-card" data-cat="bronzage">
+        <div class="service-cat-tag">Bronzage Solarium UV</div>
+        <div class="service-name">Bronzage UV — 10 minutes</div>
+        <div class="service-desc">Séance solarium UV allongé. Réservé aux personnes majeures (18+). Port des lunettes de protection obligatoire.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 10 min</span>
+          <span class="service-price">10 €</span>
+        </div>
+      </div>
+      <div class="service-card" data-cat="bronzage">
+        <div class="service-cat-tag">Bronzage Solarium UV</div>
+        <div class="service-name">Bronzage UV — 20 minutes</div>
+        <div class="service-desc">Séance solarium UV allongé. Réservé aux personnes majeures (18+). Port des lunettes de protection obligatoire.</div>
+        <div class="service-meta">
+          <span class="service-duration"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> 20 min</span>
+          <span class="service-price">20 €</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <p style="color:var(--warm-gray);font-size:.85rem;margin-bottom:1.5rem;font-style:italic">
+        Retrouvez l'intégralité de nos 68 prestations lors de votre réservation
+      </p>
+      <a href="https://www.planity.com" target="_blank" class="btn btn-primary">Voir tous les soins &amp; réserver</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== EXPERTISE =========== -->
+<section id="expertise">
+  <div class="container">
+    <div class="expertise-inner">
+      <div class="expertise-item">
+        <div class="expertise-icon">🌿</div>
+        <h3>Soins Bio Phyt's</h3>
+        <p>Gamme 100 % certifiée biologique. Ampoules d'actifs concentrés à usage unique, ouvertes devant vous à chaque séance.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">✦</div>
+        <h3>Épiloderm® Bio-sourcé</h3>
+        <p>Cire d'exception à base de résine de pin végétale. Exfoliation naturelle, peaux sensibles respectées, repousse ralentie.</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">◈</div>
+        <h3>Coach Minceur Diplômée</h3>
+        <p>9 programmes Cursilhouette Bio personnalisés par morphotype. Bilan corporel offert avant chaque cure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== ENGAGEMENTS =========== -->
+<section id="engagements">
+  <div class="container">
+    <div class="engagements-header">
+      <div class="section-label" style="justify-content:center">Nos Engagements</div>
+      <h2>Ce qui nous distingue</h2>
+      <p class="subtitle" style="text-align:center;margin-top:.6rem">Une philosophie fondée sur le naturel et l'excellence</p>
+    </div>
+    <div class="engagements-grid">
+      <div class="engagement-item">
+        <div class="eng-icon">🌱</div>
+        <h3>100 % Bio &amp; Naturel</h3>
+        <p>Produits certifiés biologiques Phyt's et actifs bio-sourcés Épiloderm®. Respect de votre peau et de la planète.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="eng-icon">⭐</div>
+        <h3>23 ans d'expertise</h3>
+        <p>Plus de deux décennies de pratique, de formation continue et de passion pour l'esthétique et le bien-être.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="eng-icon">🎯</div>
+        <h3>Sur-mesure absolu</h3>
+        <p>Chaque protocole est adapté à votre peau, votre morphotype et vos objectifs. Aucune routine standard.</p>
+      </div>
+      <div class="engagement-item">
+        <div class="eng-icon">💎</div>
+        <h3>Excellence &amp; Précision</h3>
+        <p>Des gestes techniques précis, des actifs de haute qualité et une attention portée au moindre détail de votre expérience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== BOOKING CTA =========== -->
+<section id="booking">
+  <div class="booking-inner">
+    <div class="divider"><span>◈</span></div>
+    <div class="section-label" style="justify-content:center">Rendez-vous</div>
+    <h2>Réservez votre moment</h2>
+    <p class="subtitle">En ligne sur Planity, ou par téléphone</p>
+    <div class="booking-options">
+      <a href="https://www.planity.com" target="_blank" class="btn btn-primary">
+        Réserver sur Planity
+      </a>
+      <a href="tel:0982529216" class="btn btn-outline">
+        09 82 52 92 16
+      </a>
+    </div>
+    <p class="booking-note">
+      Réservation en ligne 24h/24 · Rappel par SMS · Annulation facile
+    </p>
+  </div>
+</section>
+
+<!-- =========== CONTACT =========== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Nous trouver</div>
+        <h2>Venez nous rendre visite</h2>
+        <p class="subtitle">Au cœur de Louviers, en Normandie</p>
+        <ul class="contact-list">
+          <li>
+            <div class="ci">📍</div>
+            <div class="cl">
+              <strong>Adresse</strong>
+              Place de la Porte de l'Eau<br>27400 Louviers, Normandie
+            </div>
+          </li>
+          <li>
+            <div class="ci">📞</div>
+            <div class="cl">
+              <strong>Téléphone</strong>
+              <a href="tel:0982529216">09 82 52 92 16</a>
+            </div>
+          </li>
+          <li>
+            <div class="ci">🌐</div>
+            <div class="cl">
+              <strong>Site internet</strong>
+              <a href="https://www.institutdesportesdeleau.fr">www.institutdesportesdeleau.fr</a>
+            </div>
+          </li>
+          <li>
+            <div class="ci">📅</div>
+            <div class="cl">
+              <strong>Réservation en ligne</strong>
+              Disponible 24h/24 via Planity
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-map">
+        <div class="map-placeholder">
+          <div class="map-placeholder-text">
+            <p>📍 Institut des Portes de l'Eau</p>
+            <span>Place de la Porte de l'Eau — 27400 Louviers</span>
+          </div>
+        </div>
+        <h4 style="color:var(--teal-dark);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem">Horaires d'ouverture</h4>
+        <div class="hours-grid">
+          <div class="hour-row"><span class="day">Lundi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Mardi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Mercredi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Jeudi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Vendredi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day">Samedi</span><span class="time">9h30 – 19h00</span></div>
+          <div class="hour-row"><span class="day" style="color:var(--warm-gray)">Dimanche</span><span class="time">Fermé</span></div>
+        </div>
+        <p style="font-size:.75rem;color:var(--warm-gray);margin-top:1rem;font-style:italic">* Horaires susceptibles de varier — Contactez-nous pour confirmer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="name">Institut des Portes de l'Eau</div>
+      <div class="city">Louviers · Normandie</div>
+      <p>Un havre de paix dédié à la beauté naturelle et au bien-être, au cœur de Louviers. Produits bio, expertise, personnalisation.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>L'Institut</h4>
+      <ul>
+        <li><a href="#about">Notre histoire</a></li>
+        <li><a href="#services">Nos soins</a></li>
+        <li><a href="#engagements">Nos engagements</a></li>
+        <li><a href="#contact">Nous trouver</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0982529216">09 82 52 92 16</a></li>
+        <li><a href="https://www.planity.com" target="_blank">Réserver sur Planity</a></li>
+        <li><a href="https://www.institutdesportesdeleau.fr">Notre site web</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Institut des Portes de l'Eau · Louviers · Tous droits réservés</p>
+    <div class="social-links">
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="Instagram">◎</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll shadow on nav
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Service category filter
+  function filterCat(btn, cat) {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.service-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;background:rgba(244,238,224,.98);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(197,151,58,.2);z-index:99;';
+    }
+  }
+
+  // Smooth appear on scroll
+  const cards = document.querySelectorAll('.service-card, .engagement-item, .pillar');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(20px)';
+    c.style.transition = 'opacity .5s, transform .5s';
+    observer.observe(c);
+  });
+</script>
+</body>
+</html>
