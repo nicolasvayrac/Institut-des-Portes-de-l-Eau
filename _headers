@@ -1,0 +1,22 @@
+# Cache long pour les assets statiques (SEO / perf)
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/*.webmanifest
+  Cache-Control: public, max-age=86400
+
+# HTML : revalider souvent
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sécurité
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

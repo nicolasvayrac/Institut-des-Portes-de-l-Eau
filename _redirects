@@ -1,0 +1,21 @@
+# Redirections SEO : URLs amicales vers les ancres du site
+# Permet aux visiteurs qui tapent "soin visage" ou "epilation" dans Google
+# de tomber directement sur la section pertinente, et à Google de référencer ces URLs.
+
+/soins-visage              /#services              301
+/soins-visage-louviers     /#services              301
+/epilation                 /#services              301
+/epilation-louviers        /#services              301
+/kobido                    /#services              301
+/kobido-louviers           /#services              301
+/coach-minceur             /#services              301
+/coach-minceur-louviers    /#services              301
+/massages                  /#services              301
+/tarifs                    /#services              301
+/elodie                    /#elodie                301
+/rdv                       https://www.planity.com/institut-des-portes-de-leau-27400-louviers  302
+/reservation               https://www.planity.com/institut-des-portes-de-leau-27400-louviers  302
+/contact                   /#contact               301
+
+# Catch-all pour 404 (vers accueil)
+/*                         /                       200

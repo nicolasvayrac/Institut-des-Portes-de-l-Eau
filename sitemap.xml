@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+
+  <url>
+    <loc>https://institutdesportesdeleau.fr/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://institutdesportesdeleau.fr/institut.jpg</image:loc>
+      <image:title>Institut des Portes de l'Eau — Place de la Porte de l'Eau, Louviers</image:title>
+      <image:caption>Façade de l'Institut des Portes de l'Eau à Louviers, institut de beauté bio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://institutdesportesdeleau.fr/elodie.jpg</image:loc>
+      <image:title>Élodie — Esthéticienne à l'Institut des Portes de l'Eau</image:title>
+      <image:caption>Élodie, esthéticienne diplômée et coach minceur à Louviers</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://institutdesportesdeleau.fr/mentions-legales.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
